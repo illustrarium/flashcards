@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Флэшкарточкер</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <section id="container-fluid">
+      <header class="row">
+        <!-- <h1>Флэшкарточкер</h1>
+        <ul class="navigation-links">
+          <li><a href="#">Все карточки</a></li>
+          <li><a href="#">Добавить карточку</a></li>
+        </ul> -->
+
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Флэшкарточкер</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+              <li><a href="#">Все карточки</a></li>
+              <li><a href="#">Добавить карточку</a></li>
+            </ul>
+          </div><!-- /.container-fluid -->
+        </nav>
+      </header>
+
+      <section class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <%= yield %>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
