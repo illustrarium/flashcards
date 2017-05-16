@@ -21,8 +21,9 @@
 
             <ul class="nav navbar-nav">
               <li><%= link_to "Все карточки", cards_path %></li>
-              <li><a href="#">Добавить карточку</a></li>
+              <!-- <li><a href="#">Добавить карточку</a></li> -->
             </ul>
+            <%= link_to "+ Добавить карточку",  new_card_path, class: "btn btn-success navbar-btn pull-right" %>
           </div><!-- /.container-fluid -->
         </nav>
       </header>
