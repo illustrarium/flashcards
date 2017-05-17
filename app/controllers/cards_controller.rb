@@ -21,11 +21,13 @@ class CardsController < ApplicationController
   end
 
   def edit
-    
+    @card = Card.find(params[:id])
   end
 
   def update
-    if @card.update(params)
+    @card = Card.find(params[:id])
+
+    if @card.update(card_params)
       redirect_to @card, notice: "Карточка обновлена"
     else
       render :edit
@@ -33,7 +35,10 @@ class CardsController < ApplicationController
   end
 
   def destroy
+    @card = Card.find(params[:id])
     @card.destroy
+ 
+    redirect_to cards_path
   end
 
   private

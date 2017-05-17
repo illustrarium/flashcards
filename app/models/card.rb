@@ -1,11 +1,15 @@
 class Card < ApplicationRecord
-  validates :original_text, :translated_text, presence: true
-  #validates :original_text, :translated_text, presence: true
+  validates :original_text, :translated_text, :review_date, presence: true
+  validate :check_texts
 
-  before_create :set_review_date
+  before_validation :set_review_date
 
   private
     def set_review_date
-      @params = Time.now + (60*60*24*3)
+      self.review_date = 3.days.from_now
+    end
+
+    def check_texts
+      errors.add(:original_text, "Значения полей должны отличаться") if original_text.downcase == translated_text.downcase
     end
 end
