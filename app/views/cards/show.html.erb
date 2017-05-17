@@ -1,1 +1,5 @@
-<%= @card.original_text %>
+<h1><%= @card.original_text %></h1>
+<p><%= @card.translated_text %></p>
+<p><%= @card.review_date.strftime('%d/%m/%Y') %></p>
+<%= link_to "Редактировать", edit_card_path, class: "btn btn-success" %>
+<%= link_to "Удалить", @card, method: :delete, class: "btn btn-danger" %>
