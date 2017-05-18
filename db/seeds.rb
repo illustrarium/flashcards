@@ -15,4 +15,3 @@ pairs.each do |pair|
   Card.create(original_text: pair[0].strip, translated_text: pair[1].strip)
 end
 puts "### OK. Done."
-

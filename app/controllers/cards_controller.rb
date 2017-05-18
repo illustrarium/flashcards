@@ -28,9 +28,9 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
 
     if @card.update(card_params)
-      redirect_to @card, notice: "Карточка обновлена"
+      redirect_to @card, notice: "Карточка успешно обновлена"
     else
-      render :edit
+      redirect_to @card, notice: "Карточка не обновлена"
     end
   end
 
@@ -43,6 +43,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text)
+    params.require(:card).permit(:original_text, :translated_text )
   end
 end
