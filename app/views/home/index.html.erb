@@ -7,7 +7,6 @@
           <%= simple_form_for(card, :url => home_check_path, :method => :post, html: { class: 'form' }) do |f| %>
             <%= f.input :user_variant, label: "Перевод", as: :fake, autofocus: true, html5: true %>
             <%= f.input :id, :as => :hidden %>
-            <%= f.input :translated_text, :as => :hidden %>
            <%= f.button :submit, "Проверить" %>
           <% end %>
         </div>

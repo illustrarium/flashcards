@@ -1,6 +1,6 @@
 class Card < ApplicationRecord
   scope :time_to_review, -> { where("review_date < '" + Date.today.strftime('%d.%m.%Y') + "'") }
-  # scope :time_to_review, -> { where("review_date < '" + 3.days.from_now.strftime('%d.%m.%Y') + "'") }
+  # scope :time_to_review, -> { where("review_date < '" + 2.days.from_now.strftime('%d.%m.%Y') + "'") }
 
   validates :original_text, :translated_text, :review_date, presence: true
   validate :check_texts
@@ -11,11 +11,11 @@ class Card < ApplicationRecord
     self.original_text.downcase == user_variant.downcase
   end
 
-  private
-
   def set_review_date
     self.review_date = 3.days.from_now
   end
+
+  private
 
   def check_texts
     errors.add(:original_text, "Значения полей должны отличаться") if original_text.downcase == translated_text.downcase
