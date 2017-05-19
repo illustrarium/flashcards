@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
   def check
     @card = Card.find(params[:card][:id])
-    
+
     if @card.check_translate(params[:user_variant])
       new_date = 3.days.from_now
       @card.update(review_date: new_date)
