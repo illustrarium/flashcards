@@ -28,9 +28,9 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
 
     if @card.update(card_params)
-      redirect_to @card, notice: "Карточка обновлена"
+      redirect_to @card, notice: "Карточка успешно обновлена"
     else
-      render :edit
+      redirect_to @card, notice: "Карточка не обновлена"
     end
   end
 

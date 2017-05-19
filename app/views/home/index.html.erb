@@ -1,3 +1,16 @@
-<p style="font-size: 22px;">
-  Первый в мире удобный менеджер флеш-карточек. Именно так.
-</p>
+<% @card.each do |card| %>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 text-center">
+      <div class="thumbnail">
+        <div class="caption">
+          <h1><%= link_to card.translated_text, card %></h1>
+          <%= simple_form_for(card, :url => home_check_path, :method => :post, html: { class: 'form' }) do |f| %>
+            <%= f.input :user_variant, label: "Перевод", as: :fake, autofocus: true, html5: true %>
+            <%= f.input :id, :as => :hidden %>
+           <%= f.button :submit, "Проверить" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
