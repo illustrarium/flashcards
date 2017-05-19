@@ -7,6 +7,10 @@ class Card < ApplicationRecord
 
   before_validation :set_review_date, on: :create
 
+  def check_translate(user_variant)
+    self.original_text.downcase == user_variant.downcase
+  end
+
   private
 
   def set_review_date
