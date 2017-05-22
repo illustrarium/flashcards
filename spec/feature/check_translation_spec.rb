@@ -12,10 +12,21 @@ feature 'Checkin translation' do
     # 1. Goes to "/"
     visit '/'
     # 2. Wrong iput
-    fill_in 'user_variant', with: 'cat'
+    fill_in 'user_variant', with: 'Believer'
     # 3. Click check btn
     click_button 'Проверить'
     # 4. Expect "Wrong" notice
+    expect(page).to have_content('Неверно')
+  end
+
+  scenario 'Success' do
+    # 1. Goes to "/"
+    visit '/'
+    # 2. Wrong iput
+    fill_in 'user_variant', with: 'Cat'
+    # 3. Click check btn
+    click_button 'Проверить'
+    # 4. Expect "Success" notice
     expect(page).to have_content('Правильно')
   end
 end
