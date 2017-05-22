@@ -1,4 +1,5 @@
 class Card < ApplicationRecord
+  belongs_to :user
   scope :time_to_review, -> { where("review_date < '" + Date.today.strftime('%Y-%m-%d') + "'") }
   # scope :time_to_review, -> { where("review_date < '" + 2.days.from_now.strftime('%Y-%m-%d') + "'") }
 
