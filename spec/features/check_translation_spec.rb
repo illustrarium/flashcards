@@ -15,7 +15,9 @@
 
 
 describe "Checkin translation", :type => :feature do
-  let(:card) { FactoryGirl.create(:card) }
+  before :each do
+    @card = FactoryGirl.create(:card)
+  end
 
   it "Failed" do
     visit '/'
