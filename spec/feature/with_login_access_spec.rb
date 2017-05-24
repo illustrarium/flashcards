@@ -1,9 +1,9 @@
 require 'rails_helper.rb'
 
-feature 'Access with login' do 
+feature 'Access with login' do
   before :each do
     @card = FactoryGirl.create(:user)
-    login_user_post("cat@cat.ru", "123") #login in with parameters
+    login_user_post("cat@cat.ru", "123") # login in with parameters
   end
 
   scenario 'to main page' do

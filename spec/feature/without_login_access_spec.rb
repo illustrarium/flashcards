@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature 'Access without login' do 
+feature 'Access without login' do
   scenario 'Redirect from main to login page' do
     visit '/'
     expect(page).to have_content('Пожалуйста, войдите.')
