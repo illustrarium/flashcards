@@ -4,6 +4,9 @@
       <div class="thumbnail">
         <div class="caption">
           <h1><%= link_to card.translated_text, card %></h1>
+          <% if card.cardimg.exists? %>
+            <%= image_tag card.cardimg.url(:medium), class: "img-responsive" %>
+          <% end %>
           <%= simple_form_for(card, :url => home_check_path, :method => :post, html: { class: 'form' }) do |f| %>
             <%= f.input :user_variant, label: "Перевод", as: :fake, autofocus: true, html5: true %>
             <%= f.input :id, :as => :hidden %>

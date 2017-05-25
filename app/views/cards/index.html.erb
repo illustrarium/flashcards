@@ -6,6 +6,9 @@
       <div class="thumbnail">
         <div class="caption">
           <h3><%= link_to card.original_text, card %></h3>
+          <% if card.cardimg.exists? %>
+            <%= image_tag card.cardimg.url(:medium), class: "img-responsive" %>
+          <% end %>
           <p><%= card.translated_text %></p>
           <p><%= card.review_date.strftime('%d/%m/%Y') %></p>
         </div>

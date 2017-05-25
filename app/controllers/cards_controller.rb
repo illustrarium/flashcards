@@ -28,6 +28,10 @@ class CardsController < ApplicationController
   def update
     @card = Card.find(params[:id])
 
+    unless card_params[:cardimg]
+      @card.remove_cardimg
+    end
+
     if @card.update(card_params)
       redirect_to @card, notice: "Карточка успешно обновлена"
     else
@@ -44,6 +48,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text)
+    params.require(:card).permit(:original_text, :translated_text, :cardimg, cardimg: [:cardimg_file_name, :icardimg_file_size, :cardimg_content_type, :cardimg_updated_at])
   end
 end

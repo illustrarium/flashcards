@@ -7,6 +7,9 @@ class Card < ApplicationRecord
   validate :check_texts
 
   before_validation :set_review_date, on: :create
+  has_attached_file :cardimg, styles: { medium: "360x360>", thumb: "100x100>" }
+  validates_attachment_content_type :cardimg, content_type: /\Aimage\/.*\z/
+  
 
   def check_translate(user_variant)
     self.original_text.downcase == user_variant.downcase
@@ -14,6 +17,10 @@ class Card < ApplicationRecord
 
   def set_review_date
     self.review_date = 3.days.from_now
+  end
+
+  def remove_cardimg
+    self.cardimg = nil
   end
 
   private
