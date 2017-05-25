@@ -3,6 +3,6 @@ FactoryGirl.define do
     original_text "cat"
     translated_text "кот"
     user
-    cardimg { fixture_file_upload(Rails.root.join('spec', 'photos', 'test.jpg'), 'image/jpg') }
+    cardimg { File.new("#{Rails.root}/spec/photos/test.jpg") }
   end
 end
