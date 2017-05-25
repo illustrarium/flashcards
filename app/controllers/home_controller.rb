@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @card = Card.time_to_review.order("random()").limit(1)
+    @card = Card.time_to_review.order("random()").where(user: current_user).limit(1)
   end
 
   def check

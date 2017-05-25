@@ -1,4 +1,3 @@
-# require 'spec_helper.rb'
 require 'rails_helper.rb'
 
 feature 'Checkin translation' do 
@@ -6,6 +5,7 @@ feature 'Checkin translation' do
     @card = FactoryGirl.create(:card)
     @card.review_date = 2.days.ago
     @card.save
+    login_user_post("cat@cat.ru", "123") # login in with parameters
   end
 
   scenario 'Failed' do

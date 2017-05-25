@@ -38,6 +38,7 @@ gem 'pg', '0.18.1'
 gem 'rails_12factor'
 gem 'simple_form'
 gem 'nokogiri', '~> 1.7', '>= 1.7.1'
+gem 'sorcery'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

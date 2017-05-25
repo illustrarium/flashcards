@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   def index
-    @cards = Card.all
+    # @cards = Card.all
+    @cards = Card.where(user: current_user)
   end
 
   def show
@@ -12,7 +13,8 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.build(card_params)
+    # @card = Card.new(card_params)
     if @card.save
       redirect_to @card, notice: 'Карточка успешно создана'
     else
