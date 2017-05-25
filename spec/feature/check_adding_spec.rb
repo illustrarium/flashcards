@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature 'Check adding card' do 
+feature 'Check adding card' do
   before :each do
     @user = FactoryGirl.create(:user)
     login_user_post("cat@cat.ru", "123") # login in with parameters
