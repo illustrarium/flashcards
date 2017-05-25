@@ -1,7 +1,6 @@
 class CardsController < ApplicationController
   def index
-    # @cards = Card.all
-    @cards = Card.where(user: current_user)
+    @cards = current_user.cards
   end
 
   def show
