@@ -10,22 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523060649) do
+ActiveRecord::Schema.define(version: 20170525054243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cards", force: :cascade do |t|
     t.string   "original_text"
     t.string   "translated_text"
     t.date     "review_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "user_id"
+    t.string   "cardimg_file_name"
+    t.string   "cardimg_content_type"
+    t.integer  "cardimg_file_size"
+    t.datetime "cardimg_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",            null: false
+    t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at",       null: false

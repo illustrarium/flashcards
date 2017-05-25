@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 
 include Sorcery::TestHelpers
+include ActionDispatch::TestProcess
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
