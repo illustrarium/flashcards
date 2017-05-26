@@ -1,9 +1,10 @@
 class Card < ApplicationRecord
   belongs_to :user
+  belongs_to :deck
   scope :time_to_review, -> { where("review_date < '" + Date.today.strftime('%Y-%m-%d') + "'") }
   # scope :time_to_review, -> { where("review_date < '" + 2.days.from_now.strftime('%Y-%m-%d') + "'") }
 
-  validates :original_text, :translated_text, :review_date, presence: true
+  validates :original_text, :translated_text, :review_date, :deck, presence: true
   validate :check_texts
 
   before_validation :set_review_date, on: :create

@@ -13,7 +13,6 @@ class CardsController < ApplicationController
 
   def create
     @card = current_user.cards.build(card_params)
-    # @card = Card.new(card_params)
     if @card.save
       redirect_to @card, notice: 'Карточка успешно создана'
     else
@@ -48,6 +47,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text, :cardimg, cardimg: [:cardimg_file_name, :icardimg_file_size, :cardimg_content_type, :cardimg_updated_at])
+    params.require(:card).permit(:original_text, :translated_text, :cardimg, :deck_id, cardimg: [:cardimg_file_name, :icardimg_file_size, :cardimg_content_type, :cardimg_updated_at])
   end
 end

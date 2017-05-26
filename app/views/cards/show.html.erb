@@ -1,5 +1,6 @@
 <h1><%= @card.original_text %></h1>
 <p><%= @card.translated_text %></p>
+<p><%= @card.deck.title %></p>
 <% if @card.cardimg.exists? %>
   <%= image_tag @card.cardimg.url(:medium), class: "img-responsive" %>
 <% end %>
