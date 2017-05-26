@@ -12,6 +12,6 @@ feature 'Check adding card' do
     fill_in 'Перевод', with: 'кот'
     attach_file("Cardimg", Rails.root + "spec/photos/test.jpg")
     click_button 'Создать карточку'
-    expect(page).to have_content('Карточка успешно создана')
+    expect(page).to have_css('img')
   end
 end

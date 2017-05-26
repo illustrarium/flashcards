@@ -1,5 +1,8 @@
 <h1><%= @card.original_text %></h1>
 <p><%= @card.translated_text %></p>
+<% if @card.cardimg.exists? %>
+  <%= image_tag @card.cardimg.url(:medium), class: "img-responsive" %>
+<% end %>
 <p><%= @card.review_date.strftime('%d/%m/%Y') %></p>
 <%= link_to "Редактировать", edit_card_path, class: "btn btn-success" %>
 <%= link_to "Удалить", @card, method: :delete, class: "btn btn-danger" %>
