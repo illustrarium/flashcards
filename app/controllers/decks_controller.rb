@@ -45,6 +45,8 @@ class DecksController < ApplicationController
     current_user.current_deck_id = deck.id
     if current_user.save
       redirect_to decks_path, notice: "Текущая колода обновлена"
+    else
+      redirect_to decks_path, alert: "Ошибка! Текущая колода не обновлена"
     end
   end
 
