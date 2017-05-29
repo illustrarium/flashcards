@@ -1,11 +1,11 @@
 class DecksController < ApplicationController
+  before_action :set_deck, only: [:show, :edit, :update, :destroy]
+
   def index
     @decks = current_user.decks
   end
 
-  def show
-    @deck = Deck.find(params[:id])
-  end
+  def show; end
 
   def new
     @deck = Deck.new
@@ -20,13 +20,9 @@ class DecksController < ApplicationController
     end
   end
 
-  def edit
-    @deck = Deck.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @deck = Deck.find(params[:id])
-
     if @deck.update(deck_params)
       redirect_to @deck, notice: "Колода успешно обновлена"
     else
@@ -35,22 +31,20 @@ class DecksController < ApplicationController
   end
 
   def destroy
-    @deck = Deck.find(params[:id])
     @deck.destroy
     redirect_to decks_path
   end
 
   def set_current
-    deck = Deck.find(params[:deck][:id])
-    current_user.current_deck_id = deck.id
-    if current_user.save
-      redirect_to decks_path, notice: "Текущая колода обновлена"
-    else
-      redirect_to decks_path, alert: "Ошибка! Текущая колода не обновлена"
-    end
+    current_user.update(current_deck_id: params[:deck][:id])
+    redirect_to decks_path, notice: "Текущая колода обновлена"
   end
 
   private
+
+  def set_deck
+    @deck = Deck.find(params[:id])
+  end
 
   def deck_params
     params.require(:deck).permit(:title, :current)
