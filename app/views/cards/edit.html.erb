@@ -1,3 +1,10 @@
 <div class="col-cg-3 col-offset-4">
-  <%= render 'form', btn_text: "Сохранить" %>
+  <%= simple_form_for(@card, html: { class: 'form' }) do |f| %>
+  <%= f.input :original_text, label: "Оригинальный текст" %>
+  <%= f.input :translated_text, label: "Перевод" %>
+  <%= f.input :review_date, label: "Дата проверки" %>
+  <%= f.association :deck, label: "Колода" %>
+  <%= f.input :cardimg, as: :file %>
+  <%= f.button :submit, 'Сохранить' %>
+<% end %>
 </div>
