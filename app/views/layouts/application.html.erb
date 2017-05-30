@@ -21,6 +21,7 @@
             <ul class="nav navbar-nav">
               <% if current_user %>
                 <li><%= link_to "Мои карточки", cards_path %></li>
+                <li><%= link_to "Мои колоды", decks_path %></li>
                 <li><%= link_to "Изменить профиль", edit_user_path(current_user.id) %></li>
                 <li><%= link_to "Выйти", :logout, method: :post %></li>
               <% else %>
