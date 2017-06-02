@@ -1,7 +1,7 @@
 class Card < ApplicationRecord
   belongs_to :user
   belongs_to :deck
-  scope :time_to_review, -> { where("review_date <= '" + Time.now.to_s + "'") }
+  scope :time_to_review, -> { where("review_date <= ?", Time.now) }
   scope :random, -> { order("random()") }
   # scope :time_to_review, -> { where("review_date < '" + 2.days.from_now.strftime('%Y-%m-%d') + "'") }
 
@@ -17,15 +17,14 @@ class Card < ApplicationRecord
   end
 
   def set_review_date(check_count = 0)
-    spaces = [43200, 259200, 604800, 1209600, 2592000]
+    # time interval between reviews - 12 hours, 3, 7, 14, 30 days
+    intervals = [43_200, 259_200, 604_800, 1_209_600, 2_592_000]
 
     if check_count.zero?
       self.review_date = Time.now
     else
       (0..4).each do |i|
-        if check_count == i + 1
-          self.review_date = Time.now + spaces[i]
-        end
+        self.review_date = Time.now + intervals[i] if check_count == i + 1
       end
     end
 
