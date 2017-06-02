@@ -1,7 +1,7 @@
 class Card < ApplicationRecord
   belongs_to :user
   belongs_to :deck
-  scope :time_to_review, -> { where("review_date <= '" + Date.today.strftime('%Y-%m-%d') + "'") }
+  scope :time_to_review, -> { where("review_date <= '" + Time.now.to_s + "'") }
   scope :random, -> { order("random()") }
   # scope :time_to_review, -> { where("review_date < '" + 2.days.from_now.strftime('%Y-%m-%d') + "'") }
 
@@ -16,8 +16,30 @@ class Card < ApplicationRecord
     self.original_text.downcase == user_variant.downcase
   end
 
-  def set_review_date
-    self.review_date = 3.days.from_now
+  def set_review_date(check_count = 0)
+    spaces = [43200, 259200, 604800, 1209600, 2592000]
+
+    if check_count == 0
+      self.review_date = Time.now
+    else
+      (0..4).each do |i|
+        if check_count == i+1
+          self.review_date = Time.now + spaces[i]
+        end 
+      end
+    end
+
+    self.check_count < 6 ? self.check_count += 1 : self.check_count = 1
+  end
+
+  def check_errors
+    self.erros_count += 1
+
+    if self.erros_count == 3
+      self.check_count = 1
+      self.erros_count = 0
+      self.review_date = Time.now + 43200
+    end 
   end
 
   def remove_cardimg
