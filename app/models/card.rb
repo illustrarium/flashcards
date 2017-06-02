@@ -19,13 +19,13 @@ class Card < ApplicationRecord
   def set_review_date(check_count = 0)
     spaces = [43200, 259200, 604800, 1209600, 2592000]
 
-    if check_count == 0
+    if check_count.zero?
       self.review_date = Time.now
     else
       (0..4).each do |i|
-        if check_count == i+1
+        if check_count == i + 1
           self.review_date = Time.now + spaces[i]
-        end 
+        end
       end
     end
 
@@ -39,7 +39,7 @@ class Card < ApplicationRecord
       self.check_count = 1
       self.erros_count = 0
       self.review_date = Time.now + 43200
-    end 
+    end
   end
 
   def remove_cardimg
