@@ -4,7 +4,7 @@ RSpec.describe Card, :type => :model do
   let(:card) { FactoryGirl.create(:card) }
 
   it "Check translate" do
-    expect(card.check_translate("battlestart")).to be false
+    expect(card.check_translate("crt")).to be 1
   end
 
   it "Set review date and count" do

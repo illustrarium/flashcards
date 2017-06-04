@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   def check
     @card = Card.find(params[:card][:id])
 
-    if @card.check_translate(params[:user_variant]) == 0
+    if @card.check_translate(params[:user_variant]).zero?
       @card.set_review_date(@card.check_count)
       @card.save
       redirect_to home_index_path, notice: "Правильно"

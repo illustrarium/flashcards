@@ -14,7 +14,6 @@ class Card < ApplicationRecord
 
   def check_translate(user_variant)
     Levenshtein.distance(self.original_text.downcase, user_variant.downcase)
-    # self.original_text.downcase == user_variant.downcase
   end
 
   def set_review_date(check_count = 0)
