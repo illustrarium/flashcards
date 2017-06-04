@@ -11,10 +11,12 @@ class HomeController < ApplicationController
     @card = Card.find(params[:card][:id])
 
     if @card.check_translate(params[:user_variant])
-      @card.set_review_date
+      @card.set_review_date(@card.check_count)
       @card.save
       redirect_to home_index_path, notice: "Правильно"
     else
+      @card.check_errors
+      @card.save
       redirect_to home_index_path, alert: "Неверно"
     end
   end
