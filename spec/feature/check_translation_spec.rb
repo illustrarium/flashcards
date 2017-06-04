@@ -16,7 +16,7 @@ feature 'Checkin translation' do
     # 3. Click check btn
     click_button 'Проверить'
     # 4. Expect "Wrong" notice
-    expect(page).to have_content('Неверно')
+    expect(page).to have_content('Совсем неверно!')
   end
 
   scenario 'Success' do
