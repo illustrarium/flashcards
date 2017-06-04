@@ -10,14 +10,18 @@ class HomeController < ApplicationController
   def check
     @card = Card.find(params[:card][:id])
 
-    if @card.check_translate(params[:user_variant])
+    if @card.check_translate(params[:user_variant]) == 0
       @card.set_review_date(@card.check_count)
       @card.save
       redirect_to home_index_path, notice: "Правильно"
+    elsif @card.check_translate(params[:user_variant]) == 1
+      @card.check_errors
+      @card.save
+      redirect_to home_index_path, alert: "Наверное опечатка? Вы ввели - #{params[:user_variant]}. На самом деле слово #{@card.translated_text} переводится как #{@card.original_text}"
     else
       @card.check_errors
       @card.save
-      redirect_to home_index_path, alert: "Неверно"
+      redirect_to home_index_path, alert: "Совсем неверно!"
     end
   end
 end

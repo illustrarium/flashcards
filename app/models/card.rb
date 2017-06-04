@@ -13,7 +13,8 @@ class Card < ApplicationRecord
   validates_attachment_content_type :cardimg, content_type: /\Aimage\/.*\z/
 
   def check_translate(user_variant)
-    self.original_text.downcase == user_variant.downcase
+    Levenshtein.distance(self.original_text.downcase, user_variant.downcase)
+    # self.original_text.downcase == user_variant.downcase
   end
 
   def set_review_date(check_count = 0)
