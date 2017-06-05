@@ -1,7 +1,7 @@
 <%= simple_form_for(@card, html: { class: 'form' }) do |f| %>
   <%= f.input :original_text, label: "Оригинальный текст" %>
   <%= f.input :translated_text, label: "Перевод" %>
-  <%= f.association :deck, label: "Колода" %>
+  <%= f.association :deck, label: "Колода", value: current_user.decks %>
   <%= f.input :cardimg, as: :file %>
  <%= f.button :submit, btn_text %>
 <% end %>
