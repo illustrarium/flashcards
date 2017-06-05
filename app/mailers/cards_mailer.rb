@@ -1,6 +1,6 @@
 class CardsMailer < ApplicationMailer
-	default from: 'notifications@flashcards.ru'
- 
+  default from: 'notifications@flashcards.ru'
+
   def pending_cards_notification(user)
     @user = user
     @url  = 'https://damp-lake-42188.herokuapp.com/'
