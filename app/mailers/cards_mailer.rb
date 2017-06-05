@@ -3,7 +3,7 @@ class CardsMailer < ApplicationMailer
 
   def pending_cards_notification(user)
     @user = user
-    @url  = 'https://damp-lake-42188.herokuapp.com/'
+    @url  = ENV["ROOT_URL"]
     mail(to: @user.email, subject: 'Не забудьте проверить карточки')
   end
 end
