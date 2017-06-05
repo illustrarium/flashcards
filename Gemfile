@@ -33,12 +33,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'pg', '0.18.1'
 gem 'nokogiri', '~> 1.7', '>= 1.7.1'
-gem 'rails_12factor'
+gem 'pg', '0.18.1'
 gem 'aws-sdk', '~> 2.3.0'
-gem 'simple_form'
+gem 'rails_12factor'
 gem 'levenshtein', '~> 0.2.2'
+gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem 'sorcery'
 
