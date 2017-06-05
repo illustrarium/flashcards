@@ -5,11 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -36,25 +35,25 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'pg', '0.18.1'
 gem 'rails_12factor'
-gem 'simple_form'
 gem 'nokogiri', '~> 1.7', '>= 1.7.1'
-gem 'sorcery'
-gem "paperclip", "~> 5.0.0"
+gem 'simple_form'
 gem 'aws-sdk', '~> 2.3.0'
+gem "paperclip", "~> 5.0.0"
+gem 'sorcery'
 gem 'levenshtein', '~> 0.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '3.5'
-  gem "factory_girl_rails", "~> 4.0"
   gem 'capybara'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'rspec-rails', '3.5'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
