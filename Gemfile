@@ -34,13 +34,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pg', '0.18.1'
-gem 'rails_12factor'
 gem 'nokogiri', '~> 1.7', '>= 1.7.1'
-gem 'simple_form'
+gem 'rails_12factor'
 gem 'aws-sdk', '~> 2.3.0'
+gem 'simple_form'
+gem 'levenshtein', '~> 0.2.2'
 gem "paperclip", "~> 5.0.0"
 gem 'sorcery'
-gem 'levenshtein', '~> 0.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
