@@ -13,24 +13,12 @@ class UsersController < ApplicationController
       redirect_to current_user, alert: 'Вы не можете создавать пользователей.'
     else
       @user = User.new
-      @available_locales = []
-      i = 0
-
-      while i < I18n.available_locales.count # count of locales
-        @available_locales << [I18n.available_locales[i - 1].to_s, I18n.available_locales[i - 1].to_s.upcase] # push locales to arr
-        i += 1
-      end
+      set_available_locales
     end
   end
 
   def edit
-    @available_locales = []
-    i = 0
-
-    while i < I18n.available_locales.count # count of locales
-      @available_locales << [I18n.available_locales[i - 1].to_s, I18n.available_locales[i - 1].to_s.upcase] # push locales to arr
-      i += 1
-    end
+    set_available_locales
   end
 
   def create
@@ -56,6 +44,16 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_available_locales
+    @available_locales = []
+    i = 0
+
+    while i < I18n.available_locales.count # count of locales
+      @available_locales << [I18n.available_locales[i - 1].to_s, I18n.available_locales[i - 1].to_s.upcase] # push locales to arr
+      i += 1
+    end
+  end
 
   def set_user
     @user = User.find(params[:id])
