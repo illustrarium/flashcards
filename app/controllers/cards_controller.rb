@@ -14,7 +14,7 @@ class CardsController < ApplicationController
   def create
     @card = current_user.cards.build(card_params)
     if @card.save
-      redirect_to @card, notice: 'Карточка успешно создана'
+      redirect_to @card, notice: t(".card_success_added")
     else
       render :new
     end
@@ -32,9 +32,9 @@ class CardsController < ApplicationController
     end
 
     if @card.update(card_params)
-      redirect_to @card, notice: "Карточка успешно обновлена"
+      redirect_to @card, notice: t(".card_was_updated")
     else
-      redirect_to @card, notice: "Карточка не обновлена"
+      redirect_to @card, notice: t(".card_update_failed")
     end
   end
 

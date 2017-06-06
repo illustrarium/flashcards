@@ -1,6 +1,6 @@
-<h1>Редактрировать профиль</h1>
+<h1><%= t(".edit_profile") %></h1>
 
-<%= render 'form', user: @user %>
+<%= render 'form', user: @user, btn_text: t(".save") %>
 
 <% link_to 'Show', @user %>
 <% link_to 'Back', users_path %>

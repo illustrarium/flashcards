@@ -13,17 +13,20 @@ class UsersController < ApplicationController
       redirect_to current_user, alert: 'Вы не можете создавать пользователей.'
     else
       @user = User.new
+      set_available_locales
     end
   end
 
-  def edit; end
+  def edit
+    set_available_locales
+  end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
       auto_login(@user)
-      redirect_to root_path, notice: 'Вы успешно зарегистрировались.'
+      redirect_to root_path, notice: t(".success_sign_up")
     else
       render :new
     end
@@ -31,24 +34,32 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'Успешно обновлено.'
-    else
-      render :edit
+      redirect_to @user, notice: t(".success_update")
     end
   end
 
   def destroy
     @user.destroy
-    redirect_to users_url, notice: 'Пользователь удален.'
+    redirect_to users_url, notice: t(".user_deleted")
   end
 
   private
+
+  def set_available_locales
+    @available_locales = []
+    i = 0
+
+    while i < I18n.available_locales.count # count of locales
+      @available_locales << [I18n.available_locales[i - 1].to_s, I18n.available_locales[i - 1].to_s.upcase] # push locales to arr
+      i += 1
+    end
+  end
 
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:locale, :email, :password, :password_confirmation)
   end
 end

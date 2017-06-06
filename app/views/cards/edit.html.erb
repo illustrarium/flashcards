@@ -1,10 +1,10 @@
 <div class="col-cg-3 col-offset-4">
   <%= simple_form_for(@card, html: { class: 'form' }) do |f| %>
-  <%= f.input :original_text, label: "Оригинальный текст" %>
-  <%= f.input :translated_text, label: "Перевод" %>
-  <%= f.input :review_date, label: "Дата проверки" %>
-  <%= f.association :deck, label: "Колода" %>
-  <%= f.input :cardimg, as: :file %>
-  <%= f.button :submit, 'Сохранить' %>
+  <%= f.input :original_text, label: t(".original_text") %>
+  <%= f.input :translated_text, label: t(".translated_text") %>
+  <%= f.input :review_date, label: t(".review_date") %>
+  <%= f.association :deck, label: t(".deck") %>
+  <%= f.input :cardimg, as: :file, label: t(".cardimg") %>
+  <%= f.button :submit, t(".save") %>
 <% end %>
 </div>

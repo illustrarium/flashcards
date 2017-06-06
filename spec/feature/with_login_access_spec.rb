@@ -8,17 +8,17 @@ feature 'Access with login' do
 
   scenario 'to main page' do
     visit '/'
-    expect(page).to have_content('Добавить карточку')
+    expect(page).to have_content('+ Add card')
   end
 
   scenario 'to add card page' do
     visit '/cards/new'
-    expect(page).to have_content('Оригинальный текст')
+    expect(page).to have_content('Original text')
   end
 
   scenario 'to cards page' do
     visit '/cards'
-    expect(page).to have_content('Мои карточки')
+    expect(page).to have_content('My cards')
   end
 
   scenario 'to users page' do
