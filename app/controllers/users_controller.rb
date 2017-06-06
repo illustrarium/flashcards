@@ -15,9 +15,9 @@ class UsersController < ApplicationController
       @user = User.new
       @available_locales = []
       i = 0
-      
-      while i < I18n.available_locales.count do # считаем сколько всего локалей есть
-        @available_locales << [I18n.available_locales[i-1].to_s, I18n.available_locales[i-1].to_s.upcase] # пихаем в массив локали для simple form
+
+      while i < I18n.available_locales.count # count of locales
+        @available_locales << [I18n.available_locales[i - 1].to_s, I18n.available_locales[i - 1].to_s.upcase] # push locales to arr
         i += 1
       end
     end
@@ -26,9 +26,9 @@ class UsersController < ApplicationController
   def edit
     @available_locales = []
     i = 0
-    
-    while i < I18n.available_locales.count do # считаем сколько всего локалей есть
-      @available_locales << [I18n.available_locales[i-1].to_s, I18n.available_locales[i-1].to_s.upcase] # пихаем в массив локали для simple form
+
+    while i < I18n.available_locales.count # count of locales
+      @available_locales << [I18n.available_locales[i - 1].to_s, I18n.available_locales[i - 1].to_s.upcase] # push locales to arr
       i += 1
     end
   end

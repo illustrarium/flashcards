@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature 'Checking translation' do 
+feature 'Checking translation' do
   before :each do
     @card = FactoryGirl.create(:card)
     @card.review_date = 2.days.ago

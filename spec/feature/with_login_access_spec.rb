@@ -1,7 +1,6 @@
 require 'rails_helper.rb'
 
 feature 'Access with login' do
-
   before :each do
     @card = FactoryGirl.create(:user)
     login_user_post("cat2@cat.ru", "123") # login in with parameters
