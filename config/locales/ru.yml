@@ -1,0 +1,103 @@
+# nope: "Наверное опечатка? Вы ввели - %{user_variant}. На самом деле слово %{translated_text} переводится как %{original_text}"
+
+ru:
+  hello: "Привет, мир!"
+  my_cards: "Мои карточки"
+  brandname: "Флэшкарточек"
+  title: "Флэшкарточек"
+  my_decks: "Мои колоды"
+  edit_profile: "Редактировать профиль"
+  logout: "Выйти"
+  registration: "Регистрация"
+  log_in: "Войти"
+  add_card: "+ Добавить карточку"
+  please_login: "Сначала надо войти"
+  home:
+    index:
+      translation: "Перевод"
+      check: "Проверить"
+    check:
+      correct: "Верно"
+      nope: "Наверное опечатка? Вы ввели - %{user_variant}. На самом деле слово %{translated_text} переводится как %{original_text}"
+      incorrect: "Неверно!"
+  cards:
+    index:
+      my_cards: "Мои карточки"
+    create:
+      card_success_added: "Карточка добавлена"
+    update:
+      card_was_updated: "Карточка обновлена"
+      card_update_failed: "Карточка не обновлена"
+    show:
+      delete: "Удалить"
+      edit: "Редактировать"
+    edit:
+      original_text: "Оригинальный текст"
+      translated_text: "Перевод"
+      review_date: "Дата проверки"
+      deck: "Колода"
+      save: "Сохранить"
+      cardimg: "Картинка"
+    form:
+      original_text: "Оригинальный текст"
+      translated_text: "Перевод"
+      review_date: "Дата проверки"
+      deck: "Колода"
+      cardimg: "Картинка"
+    new:
+      add_card: "Добавить"
+  users:
+    edit:
+      edit_profile: "Редактировать профиль"
+      save: "Сохранить"
+      set_current_locale: "Язык"
+    form:
+      email: "Почта"
+      password: "Пароль"
+      password_confirm: "Подтвердите пароль"
+      create_user: "Зарегистрироваться"
+    new:
+      registration: "Регистрация"
+      back: "Назад"
+      create_user: "Регистрация"
+    create:
+      success_sign_up: "Вы успешно волшли"
+    update:
+      success_update: "Информация обновлена"
+    destroy:
+      user_deleted: "Пользователь удален"
+  user_sessions:
+    form:
+      email: "Почта"
+      password: "Пароль"
+      log_in: "Войти"
+    new:
+      log_in: "Войти"
+      back: "Назад"
+    create:
+      login_success: "Вы успешно волшли"
+      login_failde: "Вы не волшли"
+    destroy:
+      logout_success: "Вы вышли"
+  decks:
+    index:
+      my_decks: "Мои колоды"
+      add_deck: "Создать колоду"
+      set_current: "Установить текущей"
+      current_deck: "Текущая"
+      cards_in_deck: "Карточек в колоде"
+    show:
+      delete: "Удалить"
+      edit: "Редактировать"
+    edit:
+      save: "Сохранить"
+      name: "Название"
+    new:
+      add_deck: "Создать"
+    create:
+      deck_success_added: "Колода успешно добавлена"
+    update:
+      deck_was_updated: "Колода обновлена"
+      deck_update_failed: "Колода не обновлена"
+    set_current:
+      current_deck_was_updated: "Установлена текущей"

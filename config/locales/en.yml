@@ -21,3 +21,102 @@
 
 en:
   hello: "Hello world"
+  my_cards: "My cards"
+  brandname: "Flashcards"
+  title: "Flashcards"
+  my_decks: "My decks"
+  edit_profile: "Edit profile"
+  logout: "Logout"
+  registration: "Sign up"
+  log_in: "Log in"
+  add_card: "+ Add card"
+  please_login: "Please log in"
+  home:
+    index:
+      translation: "Translation"
+      check: "Check it"
+    check:
+      correct: "Correct"
+      nope: "Nope. You type %{user_variant}. But right translation for %{translated_text} it's %{original_text}"
+      incorrect: "Incorrect"
+  cards:
+    index:
+      my_cards: "My cards"
+    create:
+      card_success_added: "Card success added"
+    update:
+      card_was_updated: "Card was updated"
+      card_update_failed: "Card update failed"
+    show:
+      delete: "Delete"
+      edit: "Edit"
+    edit:
+      original_text: "Original text"
+      translated_text: "Translated text"
+      review_date: "Review date"
+      deck: "Deck"
+      save: "Save"
+      cardimg: "Image"
+    form:
+      original_text: "Original text"
+      translated_text: "Translated text"
+      review_date: "Review date"
+      deck: "Deck"
+      cardimg: "Image"
+    new:
+      add_card: "Add card"
+  users:
+    edit:
+      edit_profile: "Edit profile"
+      save: "Save"
+      set_current_locale: "Set current locale"
+    form:
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password confirmation"
+      create_user: "Create user"
+    new:
+      registration: "Sign up"
+      back: "Back"
+      create_user: "Create user"
+    create:
+      success_sign_up: "Success sign up"
+    update:
+      success_update: "Updated success"
+    destroy:
+      user_deleted: "User deleted"
+  user_sessions:
+    form:
+      email: "Email"
+      password: "Password"
+      log_in: "Log in"
+    new:
+      log_in: "Log in"
+      back: "Back"
+    create:
+      login_success: "Success log in"
+      login_failde: "Log in failed"
+    destroy:
+      logout_success: "Success log out"
+  decks:
+    index:
+      my_decks: "My decks"
+      add_deck: "Add deck"
+      set_current: "Set current"
+      current_deck: "Current"
+      cards_in_deck: "Cards in deck"
+    show:
+      delete: "Delete"
+      edit: "Edit"
+    edit:
+      save: "Save"
+      name: "Name"
+    new:
+      add_deck: "Add deck"
+    create:
+      deck_success_added: "Deck success added"
+    update:
+      deck_was_updated: "Deck was updated"
+      deck_update_failed: "Deck update failed"
+    set_current:
+      current_deck_was_updated: "Current deck was updated"

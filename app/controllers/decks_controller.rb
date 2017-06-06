@@ -14,7 +14,7 @@ class DecksController < ApplicationController
   def create
     @deck = current_user.decks.build(deck_params)
     if @deck.save
-      redirect_to @deck, notice: 'Колода успешно создана'
+      redirect_to @deck, notice: t(".deck_success_added")
     else
       render :new
     end
@@ -24,9 +24,9 @@ class DecksController < ApplicationController
 
   def update
     if @deck.update(deck_params)
-      redirect_to @deck, notice: "Колода успешно обновлена"
+      redirect_to @deck, notice: t(".deck_was_updated")
     else
-      redirect_to @deck, notice: "Колода не обновлена"
+      redirect_to @deck, notice: t(".deck_update_failed")
     end
   end
 
@@ -37,7 +37,7 @@ class DecksController < ApplicationController
 
   def set_current
     current_user.update(current_deck_id: params[:deck][:id])
-    redirect_to decks_path, notice: "Текущая колода обновлена"
+    redirect_to decks_path, notice: t(".current_deck_was_updated")
   end
 
   private

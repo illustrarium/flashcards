@@ -1,5 +1,5 @@
-<h1>Регистрация</h1>
+<h1><%= t(".registration") %></h1>
 
-<%= render 'form', user: @user %>
+<%= render 'form', user: @user, btn_text: t(".create_user") %>
 
-<% link_to 'Back', users_path %>
+<% link_to t("back"), users_path %>
