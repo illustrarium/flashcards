@@ -21,7 +21,7 @@ class HomeController < ApplicationController
     else
       @card.check_errors
       @card.save
-      redirect_to home_index_path, alert: t(".incorretc")
+      redirect_to home_index_path, alert: t(".incorrect")
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature 'Checkin translation' do 
+feature 'Checking translation' do 
   before :each do
     @card = FactoryGirl.create(:card)
     @card.review_date = 2.days.ago
@@ -14,9 +14,9 @@ feature 'Checkin translation' do
     # 2. Wrong iput
     fill_in 'user_variant', with: 'Believer'
     # 3. Click check btn
-    click_button 'Проверить'
+    click_button 'Check it'
     # 4. Expect "Wrong" notice
-    expect(page).to have_content('Совсем неверно!')
+    expect(page).to have_content('Incorrect')
   end
 
   scenario 'Success' do
@@ -25,8 +25,8 @@ feature 'Checkin translation' do
     # 2. Wrong iput
     fill_in 'user_variant', with: 'Cat'
     # 3. Click check btn
-    click_button 'Проверить'
+    click_button 'Check it'
     # 4. Expect "Success" notice
-    expect(page).to have_content('Правильно')
+    expect(page).to have_content('Correct')
   end
 end

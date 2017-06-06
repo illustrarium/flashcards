@@ -9,11 +9,11 @@ feature 'Check adding card' do
 
   scenario 'with img' do
     visit '/cards/new'
-    fill_in 'Оригинальный текст', with: 'cat'
-    fill_in 'Перевод', with: 'кот'
+    fill_in 'Original text', with: 'cat'
+    fill_in 'Translated text', with: 'кот'
     select 'Бизнес', from: "card_deck_id"
-    attach_file("Cardimg", Rails.root + "spec/photos/test.jpg")
-    click_button 'Создать карточку'
+    attach_file("Image", Rails.root + "spec/photos/test.jpg")
+    click_button 'Add card'
     expect(page).to have_css('img')
   end
 end
