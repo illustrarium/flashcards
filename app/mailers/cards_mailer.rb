@@ -6,12 +6,10 @@ class CardsMailer < ApplicationMailer
     @user = user
     @url  = ENV["ROOT_URL"]
     text = 'Не забудьте проверить карточки во Флэшкарточкере. Начните сейчас ' + @url
-    message_params =  { 
-                        from: 'Flashcards App <postmaster@sandboxbed4c42f22184d91ac3e09afb489bfcc.mailgun.org>',
-                        to: @user.email,
-                        subject: 'Не забудьте проверить карточки',
-                        text: text
-                      }
+    message_params = { from: 'Flashcards App <postmaster@sandboxbed4c42f22184d91ac3e09afb489bfcc.mailgun.org>',
+                       to: @user.email,
+                       subject: 'Не забудьте проверить карточки',
+                       text: text }
     mg_client.send_message 'sandboxbed4c42f22184d91ac3e09afb489bfcc.mailgun.org', message_params
     # mail(to: @user.email, subject: 'Не забудьте проверить карточки')
   end
