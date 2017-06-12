@@ -9,8 +9,9 @@
           <% end %>
           <%= simple_form_for(card, :url => home_check_path, :method => :post, html: { class: 'form' }) do |f| %>
             <%= f.input :user_variant, label: t(".translation"), as: :fake, autofocus: true, html5: true %>
-            <%= f.input :id, :as => :hidden %>
-           <%= f.button :submit, t(".check") %>
+            <%= f.input :id, as: :hidden %>
+            <%= f.input :time, as: :fake, label: false, input_html: {class: "hidden time"} %>
+            <%= f.button :submit, t(".check") %>
           <% end %>
         </div>
       </div>
