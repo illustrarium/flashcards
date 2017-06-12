@@ -87,7 +87,6 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    http_accept_language (2.1.0)
     i18n (0.8.1)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -116,6 +115,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    newrelic_rpm (4.2.0.334)
     nio4r (2.0.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
@@ -170,6 +170,8 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    rollbar (2.14.1)
+      multi_json
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -246,17 +248,18 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   factory_girl_rails (~> 4.0)
-  http_accept_language
   jbuilder (~> 2.5)
   jquery-rails
   levenshtein (~> 0.2.2)
   listen (~> 3.0.5)
+  newrelic_rpm
   nokogiri (~> 1.7, >= 1.7.1)
   paperclip (~> 5.0.0)
   pg (= 0.18.1)
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails_12factor
+  rollbar
   rspec-rails (= 3.5)
   sass-rails (~> 5.0)
   simple_form
