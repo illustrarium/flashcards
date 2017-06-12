@@ -42,8 +42,10 @@ gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem 'sorcery'
 gem 'whenever', require: false
+gem 'http_accept_language'
 gem 'rollbar'
 gem 'newrelic_rpm'
+gem 'mailgun-ruby', '~>1.1.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
