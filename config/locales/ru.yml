@@ -15,12 +15,13 @@ ru:
   home:
     index:
       translation: "Перевод"
-      check: "Проверить"
     check:
       correct: "Верно"
       nope: "Наверное опечатка? Вы ввели - %{user_variant}. На самом деле слово %{translated_text} переводится как %{original_text}"
       incorrect: "Неверно!"
   cards:
+    card:
+      check: "Проверить"
     index:
       my_cards: "Мои карточки"
     create:

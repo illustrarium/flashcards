@@ -5,7 +5,7 @@ class CardsMailer < ApplicationMailer
     mg_client = Mailgun::Client.new ENV["MAILGUN_KEY"]
     @user = user
     @url  = ENV["ROOT_URL"]
-    text = 'Не забудьте проверить карточки во Флэшкарточкере. Начните сейчас ' + @url
+    text = 'Не забудьте проверить карточки во Флэшкарточкере. Начните сейчас ' + @url.to_s
     message_params = { from: 'Flashcards App <postmaster@sandboxbed4c42f22184d91ac3e09afb489bfcc.mailgun.org>',
                        to: @user.email,
                        subject: 'Не забудьте проверить карточки',

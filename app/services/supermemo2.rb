@@ -10,11 +10,12 @@ class SuperMemo2
     elsif @card.check_count == 2
       @card.interval = 6
     else
-      @card.efactor = @card.efactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
+      @card.efactor = @card.efactor + (0.1 - (5 - quality.to_i) * (0.08 + (5 - quality.to_i) * 0.02))
       @card.efactor = 1.3 if @card.efactor < 1.3
       @card.interval *= @card.efactor
     end
     @card.review_date = Time.now + @card.interval.days
+    @card.save
   end
 
   def failed
@@ -25,5 +26,6 @@ class SuperMemo2
     else
       @card.erros_count += 1
     end
+    @card.save
   end
 end
