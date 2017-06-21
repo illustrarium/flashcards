@@ -1,0 +1,13 @@
+// alert('Hello');
+$("#reviewing-card").fadeOut(100) {
+	$.ajax({
+    type:'GET',
+    url:'/index',
+    success:function(){
+    	$("<%= escape_javascript(render @card, locals: { cards: @card }) %>").appendTo("#cards-container");
+    }
+  });
+}
+}
+
+

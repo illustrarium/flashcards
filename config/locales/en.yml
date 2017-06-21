@@ -34,12 +34,13 @@ en:
   home:
     index:
       translation: "Translation"
-      check: "Check it"
     check:
       correct: "Correct"
       nope: "Nope. You type %{user_variant}. But right translation for %{translated_text} it's %{original_text}"
       incorrect: "Incorrect"
   cards:
+    card:
+      check: "Check it"
     index:
       my_cards: "My cards"
     create:

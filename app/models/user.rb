@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def self.notify_pending_cards
-    User.joins(:cards).where("review_date <= ?", Time.now) do |user|
+    User.joins(:cards).where("review_date <= ?", Time.now).each do |user|
       CardsMailer.pending_cards_notification(user)
     end
   end
